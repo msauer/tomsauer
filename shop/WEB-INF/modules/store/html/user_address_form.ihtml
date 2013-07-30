@@ -1,5 +1,5 @@
 
-<h2><?php echo  ?></h2>
+<h2><?php echo "" ?></h2>
 <?php if ($user_info_id) {
    $q = "SELECT * from auth_user_md5, user_info, auth_user_vendor ";
    $q .= "where auth_user_md5.user_id=user_info.user_id ";

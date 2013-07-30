@@ -1,0 +1,299 @@
+body {
+        font-family: "verdana","arial";
+        font-size: 12px;
+        color: #000000;
+        margin-top: 5px;
+        margin-left: 5px
+}
+.lay_tabulka {
+        border-top-width: 1px;
+        border-left-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        background-color: #FFFFFF;
+        border-style: solid;
+        border-color: #AFAFAF;
+        padding: 2px;
+}
+.lay_sl {
+        text-align: center;
+        vertical-align: top
+}
+.lay_slhlavni {
+        vertical-align: top
+}
+.zahlavi {
+        border-top-width: 1px;
+        border-left-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        background-color: #FFFFFF;
+        border-style: solid;
+        border-color: #AFAFAF;
+        position: relative
+}
+.zapati {
+        width: 100%;
+        text-align: center
+}
+A {
+        font-size: 100%;
+        font-style: normal;
+        font-variant: normal
+}
+A:link {
+        color: #035D8A
+}
+A:visited {
+        color: #035D8A
+}
+A:hover {
+        color: #D10000
+}
+A:active {
+        color: #035D8A
+}
+A.clanek:link {
+        color: #035D8A;
+        text-decoration: none
+}
+A.clanek:visited {
+        color: #035D8A;
+        text-decoration: none
+}
+A.clanek:hover {
+        color: #3333FF;
+        text-decoration: none
+}
+A.clanek:active {
+        color: #035D8A;
+        text-decoration: none
+}
+.z {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 13px;
+        font-weight: normal
+}
+.z1 {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 10px;
+        font-weight: normal
+}
+.z2 {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 11px;
+        font-weight: normal
+}
+.nadpis {
+        color: #898989;
+        font-family: "arial";
+        font-weight: bold;
+        text-align: center;
+        font-size: 16px
+}
+.podnadpis {
+        color: #000000;
+        font-family: "verdana","arial";
+        text-align: center;
+        font-size: 16px
+}
+.komz {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 11px;
+        font-weight: normal
+}
+.komlink {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 13px;
+        font-weight: normal
+}
+.komhlav {
+        color: #000000;
+        padding: 4px;
+        font-family: "verdana","arial";
+        font-size: 11px;
+        font-weight: normal
+}
+.komtext {
+        color: #000000;
+        background-color: #EEEEEE;
+        padding: 3px;
+        border: 1px solid #000000;
+        font-family: "verdana","arial";
+        font-size: 11px;
+        font-weight: normal
+}
+.anketasysz {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 13px;
+        font-weight: normal
+}
+.anketasysodp {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 10px;
+        font-weight: normal
+}
+.novdatum {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 10px;
+        font-weight: bold
+}
+.novtit {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 10px;
+        font-weight: bold
+}
+.novtitduraz {
+        color: #FF0000;
+        font-family: "verdana","arial";
+        font-size: 10px;
+        font-weight: bold
+}
+.novtext {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 10px;
+        font-weight: normal
+}
+.hodnoceni {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 11px;
+        font-weight: normal
+}
+.banner {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 10px;
+        font-weight: normal
+}
+.bannerpod {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 9px;
+        font-weight: normal
+}
+.strankovani {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 10px;
+        font-weight: bold
+}
+.clanadpis {
+        color: #898989;
+        font-family: "arial";
+        font-weight: bold;
+        font-size: 17px
+}
+.short {
+        color: #C90000;
+        font-family: "arial";
+        font-weight: bold;
+        font-size: 17px
+}
+.clatext {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-weight: normal;
+        font-size: 13px
+}
+.biltucne {
+        color: #366493;
+        font-family: "verdana","arial";
+        font-size: 13px;
+        font-weight: bold
+}
+.malemodre {
+        color: #035D8A;
+        font-family: "verdana","arial";
+        font-size: 11px;
+        font-weight: normal
+}
+.chybastredni {
+        color: #FF0000;
+        font-family: "verdana","arial";
+        text-align: center;
+        font-size: 16px
+}
+.mezera {
+        width: 5px
+}
+.ohr {
+        width: auto
+}
+.modryram {
+        border-top-width: 0px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 1px;
+        border-style: double;
+        border-color: #AFAFAF;
+        padding: 6px;
+        background-color: #FFFFFF
+}
+.premodryram {
+        border-top-width: 0px;
+        border-left-width: 0px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-style: double;
+        border-color: #AFAFAF;
+        padding: 6px;
+        background-color: #FFFFFF
+}
+.kaltext {
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 12px;
+        font-weight: normal
+}
+.kalclanek {
+        background-color: #C7F1C7
+}
+.kaldnesni {
+        background-color: #C1E0FF
+}
+.planakci {
+        font-family: "verdana","arial";
+        font-size: 10px
+}
+.textbox {
+        background: transparent;
+        background-color: white;
+        border: 1px solid #000000;
+        color: #000000;
+        font-family: "verdana","arial","helvetica";
+        font-size: x-small;
+        text-align: left;
+        scrollbar-face-color: #CCCCCC;
+        scrollbar-shadow-color: #FFFFFF;
+        scrollbar-highlight-color: #FFFFFF;
+        scrollbar-3dlight-color: #FFFFFF;
+        scrollbar-darkshadow-color: #FFFFFF;
+        scrollbar-track-color: #FFFFFF;
+        scrollbar-arrow-color: #000000
+}
+.textpole {
+        border: 1px solid #000000;
+        color: #000000;
+        font-family: "verdana","arial";
+        font-size: 12px
+}
+.tl {
+        background-color: #808080;
+        color: #FFFFFF;
+        font-family: Verdana,Arial,Helvetica;
+        font-size: 11px;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid #000000
+}

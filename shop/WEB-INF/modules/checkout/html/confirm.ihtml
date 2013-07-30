@@ -1,0 +1,206 @@
+ 
+<h1>Informace o platbě</h1><?php
+require_once( "store/lib/ps_payment_method.inc");
+$ps_payment_method = new ps_payment_method;
+?>
+
+<?php include("shop/html/ro_basket.ihtml"); ?>
+
+<br>
+<?php
+if ($checkout) {
+
+?>
+<form action="<?php echo SECUREURL ?>" method=POST name=Checkout>
+<?php $sess->hidden_session() ?>
+<input type=HIDDEN name=page value=<?php echo $modulename?>/thankyou>
+<input type=HIDDEN name=func value=checkoutComplete>
+<input type=HIDDEN name=user_id value=<?php echo $auth["user_id"];?>>
+  <input type=HIDDEN name=ship_to_info_id value=<?php echo $ship_to_info_id ?>>
+<input type=HIDDEN name=zone_qty value=<?php echo $zone_qty;?>>
+  <!-- Customer Information --> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="TOP" width="48%"> 
+        <table border=0 cellspacing=0 cellpadding=2 width=100%>
+          <tr bgcolor=<?php echo $cart_header_color?>> 
+            <td colspan=2><b><?php
+
+$q  = "SELECT * from user_info WHERE ";
+$q .= "user_id='" . $auth["user_id"] . "' ";
+$q .= "AND address_type='BT'";
+$db->query($q);
+$db->next_record();
+?>Plátce</b></td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT><b>Firma:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("company");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT> <b>Jméno:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("first_name");
+     echo " ";
+     $db->p("middle_name");
+     echo " ";
+     $db->p("last_name");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT> <b>Adresa:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("address_1");
+     echo "<BR>";
+     $db->p("address_2");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT>&nbsp;</td>
+            <td width=90% nowrap> <?php
+     $db->p("city");
+     echo ",";
+     $db->p("state");
+     echo " ";
+     $db->p("zip");
+     echo "<br> ";
+     $db->p("country");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT><b>Telefon:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("phone_1");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT><b>Fax:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("fax");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT><b>Email:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("user_email");
+   ?> </td>
+          </tr>
+        </table>
+      </td>
+      <td valign="TOP" width="52%"> 
+        <table border=0 cellspacing=0 cellpadding=2 width=100%>
+          <tr bgcolor=<?php echo $cart_header_color?>> 
+            <td colspan=2><b><?php
+$q  = "SELECT * from user_info WHERE ";
+$q .= "user_info_id='$ship_to_info_id'";
+$db->query($q);
+$db->next_record();
+?>Zaslat na</b></td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT><b>Firma:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("company");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT><b> Jméno:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("first_name");
+     echo " ";
+     $db->p("middle_name");
+     echo " ";
+     $db->p("last_name");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT><b> Adresa:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("address_1");
+     echo "<BR>";
+     $db->p("address_2");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT><b></b></td>
+            <td width=90% nowrap> <?php
+     $db->p("city");
+     echo ",";
+     $db->p("state");
+     echo " ";
+     $db->p("zip");
+     echo "<br> ";
+     $db->p("country");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT><b>Telefon:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("phone_1");
+   ?> </td>
+          </tr>
+          <tr> 
+            <td width=10% align=RIGHT><b>Fax:</b></td>
+            <td width=90% nowrap> <?php
+     $db->p("fax");
+   ?> </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <!-- Customer Information Ends --> <br>
+  <!-- Customer Shipping --> <!-- END Customer Shipping --><br>
+<!-- Begin Payment Infomation -->
+  <table border=0 cellspacing=0 cellpadding=2 width=100%>
+    <tr bgcolor=<?php echo $cart_header_color?>> 
+      <td colspan=2><b>Informace o platbě</b></td>
+    </tr>
+    <!--
+    <tr> 
+      <td nowrap width=10% align=RIGHT>Name On Card:</td>
+      <td>
+        <input type=TEXT name=order_payment_name value="<?php echo $order_payment_name ?>">
+        -->
+        <input type="hidden" name="order_payment_name" value="XXX">
+      <!--
+      </td>
+    </tr>
+    -->
+    <tr> 
+      <td nowrap width=10% align=RIGHT>Způsob platby:</td>
+      <td><?php $ps_payment_method->list_method($db->sf("payment_method_id")) ?></td>
+    </tr>
+
+    <!--
+    <tr>
+      <td nowrap width=10% align=RIGHT>Credit Card Number:</td>
+      <td> 
+        <input type=TEXT name=order_payment_number value="<?php echo $order_payment_number ?>">
+      </td>
+    </tr>
+    <tr> 
+      <td nowrap width=10% align=RIGHT>Expiration Date:</td>
+      <td><?php $ps_html->list_month("order_payment_expire_month") . "/" . $ps_html->list_year("order_payment_expire_year") ?></td>
+    </tr>
+    -->
+    <input type="hidden" name="order_payment_number" value="000">
+    <input type="hidden" name="order_payment_expire_month" value="12">
+    <input type="hidden" name="order_payment_expire_year" value="2015">
+  </table>
+<!-- End payment information -->
+<br>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr align=CENTER>
+  <td><input type=SUBMIT name=Submit value="Dokončit objednávku"></td>
+</tr>
+</table>
+
+
+</form>
+<!-- Body ends here -->
+<?php 
+}
+?>

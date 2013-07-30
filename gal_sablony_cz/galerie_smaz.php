@@ -1,0 +1,1 @@
+<*vyrazne*><*chyba*><*/vyrazne*>

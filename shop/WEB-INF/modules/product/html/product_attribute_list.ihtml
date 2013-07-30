@@ -1,0 +1,62 @@
+<table width="100%" cellpadding="1" cellspacing="0" border="0" align="center" class="RecordsTable"> 
+  <tr> 
+    <td class="RecordsTableHeader"> 
+      <p class="HeaderText">&nbsp;<?php echo $attribute_list_lbl ?> 
+        <?php
+if (!$product_parent_id) {
+  echo "Product:";
+} else {
+  echo  "Item:";
+}
+$url = SECUREURL . "?page=$modulename/product_form&product_id=$product_id&product_parent_id=$product_parent_id";
+echo " <A HREF=" . $sess->url($url) . ">";
+echo $ps_product->get_field($product_id,"product_name");
+echo "</A>"; 
+?> 
+      </p> 
+    </td> 
+  </tr> 
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="2"> 
+        <tr> 
+          <td width="63%" ><?php echo $attribute_list_name ?></td> 
+          <td width="37%" align="center"><?php echo $attribute_list_order ?></td> 
+        </tr> 
+        <?php
+$product_id = $vars["product_id"];
+$q = "SELECT * FROM product_attribute_sku WHERE product_id = '$product_id' ORDER BY attribute_list,attribute_name"; 
+$db->query($q);
+while ($db->next_record()) { ?> 
+        <tr nowrap="nowrap"> 
+          <td width="63%"> 
+            <?php 
+$url = SECUREURL . "?page=$modulename/product_attribute_form&product_id=" . $product_id . "&attribute_name=" . urlencode($db->f("attribute_name")) . "&return_args=" . urlencode($return_args);
+echo "<A class=\"bLink\" HREF=" . $sess->url($url) . ">";
+echo $db->f("attribute_name"); 
+echo "</A>"; ?> 
+          </td> 
+          <td width="37%" align="center"><?php echo $db->f("attribute_list"); ?></td> 
+        </tr> 
+        <?php } ?> 
+        <tr nowrap="nowrap"> 
+          <td width="100%" colspan="2">&nbsp; </td> 
+        </tr> 
+        <tr nowrap="nowrap"> 
+          <td width="100%" colspan="2"> 
+            <div align="center"> 
+              <table width="75%" border="0" cellspacing="0" cellpadding="0"> 
+                <tr> 
+                  <td width="100%" align="center"> 
+                    <input type="button" class="Button" border="0" value="Add" onclick="document.location.href='<?php $sess->purl(SECUREURL . "?page=$modulename/product_attribute_form&product_id=$product_id&return_args=" . urlencode($return_args)); ?>'" /> 
+                    <input type="button" class="Button" border="0" value="Done" onclick="document.location.href='<?php $sess->purl(SECUREURL . "?$return_args"); ?>'" /> 
+                  </td> 
+                </tr> 
+              </table> 
+            </div> 
+          </td> 
+        </tr> 
+      </table> 
+    </td> 
+  </tr> 
+</table>

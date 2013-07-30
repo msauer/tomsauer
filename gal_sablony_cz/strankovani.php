@@ -1,0 +1,1 @@
+<div class="gal_strankovani">| <*str_cisla*> | <*str_celkem*> | <*str_zobrazeno*> |</div>

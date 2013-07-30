@@ -1,0 +1,185 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Cyklosauer.cz -- Jízdní kola a doplňky</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="TREK a Gary Fisher jízdní kola - prodej, testy, servis. Kola Trek 2010 i 2009, Kola Gary Fisher 2010 i 2009" />
+<meta name="keywords" content="Šauer, Kola Šauer, MTB, Trek, Gary Fisher, Horská kola Trek, Silniční kola Trek, Trekingová kola Trek, Doplňky Trek" />
+<link href="styles/demo.css" rel="stylesheet" type="text/css" />
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"> 
+<table width="100%" height="100%"  border="0" cellpadding="0" cellspacing="0"> 
+  <tr> 
+    <td height="1" valign="top"><table width="100%" border="0" cellpadding="6" cellspacing="0" class="header"> 
+        <tr> 
+          <td><?php echo $vendor_image ?>&nbsp;</td> 
+        </tr> 
+      </table> 
+      <table width="100%"  border="0" cellpadding="0" cellspacing="0" class="mainmenu"> 
+        <tr> 
+          <td><table width="400" border="0" cellpadding="4" cellspacing="0"> 
+              <tr> 
+                <td align="center">&nbsp;&nbsp;<a class="wLink" href="<?php $sess->purl(URL . "?page=shop/index");?>"
+   ><?php echo $home_title ?></a></td> 
+                <td align="center" nowrap="nowrap"><a class="wLink"href="<?php $sess->purl(URL . "?page=shop/cart");?>"
+   ><?php echo $cart_title ?></a></td> 
+                <td align="center" nowrap="nowrap"><a class="wLink" href="<?php $sess->purl(SECUREURL . "?page=checkout/index");?>"
+   ><?php echo $checkout_title ?></a></td> 
+                <td align="center" nowrap="nowrap"><?php
+   if ($auth["perms"]) {
+      echo "<A class=\"wLink\" HREF=";
+      $sess->purl(URL . "?page=$modulename/index&func=userLogout");
+      echo ">$logout_title</A>";
+   }
+   else {
+	echo "<A class=\"wLink\" HREF=";
+ 	$sess->purl(SECUREURL . "?login=1&$QUERY_STRING");
+        echo ">$login_title</A>";
+   }
+   
+?></td> 
+              </tr> 
+            </table></td> 
+        </tr> 
+      </table></td> 
+  </tr> 
+  <tr> 
+    <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="4"> 
+        <tr> 
+          <td width="150" valign="top">&nbsp;</td> 
+          <td width="2">&nbsp;</td> 
+          <td align="right"><?php if ($auth["user_id"]) { 
+                                       echo "Přihlášen jako " . $auth["first_name"]. " ";
+ 										echo $auth["last_name"] . ".<BR>";
+                                       }
+                ?> </td> 
+          <td width="150" align="right">&nbsp;</td>
+        </tr> 
+        <tr> 
+          <td width="150" valign="top"><?php require_once("product/lib/ps_product_category.inc");
+$ps_product_category = new ps_product_category;
+?>
+<!-- Start leftbar --> 
+  <!-- Welcome notice --> <?php 
+  if ($perm->check("admin,storeadmin,demo")) {
+?> 
+<table width="100%" border="0" cellspacing="0" cellpadding="1">
+  <tr align="center"> 
+    <td class="RecordsTableHeader"> <a class="wLink" href="<?php $sess->purl(SECUREURL . "?page=store/index"); ?>">Administration</a></td>
+  </tr>
+  <tr align="center"> 
+    <td><br />
+  </td>
+  </tr>
+</table>
+  <?php
+ }
+?> <!-- Begin Navigation --> 
+<table width="100%" border="0" cellspacing="0" cellpadding="1" class="MenuTable">
+  <tr> 
+    <td class="RecordsTableHeader"><span class="RecordsTableHeader"><?php echo $navigation_title ?></span> </td>
+  </tr>
+  <tr> 
+    <td> 
+	<ul>
+      <li><a href="<?php $sess->purl(URL . "?page=shop/index");?>"
+   ><?php echo $home_title ?></a></li>
+      <li><a href="<?php $sess->purl(URL . "?page=shop/browse");?>"
+   ><?php echo $browse_title ?></a></li>
+      <li><a href="<?php $sess->purl(URL . "?page=shop/cart");?>"
+   ><?php echo $cart_title ?></a></li>
+      <li><a href="<?php $sess->purl(SECUREURL . "?page=checkout/index");?>"
+   ><?php echo $checkout_title ?></a></li>
+      <li><a href="<?php $sess->purl(SECUREURL . "?page=account/index");?>"
+   ><?php echo $account_title ?></a></li>
+    </ul></td>
+  </tr>
+  <?php 
+ if ($auth["user_id"]) {
+?>
+ 
+  <?php
+  }
+?> <!-- End Navigation -->  
+<!-- Begin Browse Categories --> 
+  <tr> 
+    <td class="RecordsTableHeader"><span class="RecordsTableHeader"><?php echo $department_title ?></span> </td>
+  </tr>
+  <tr><td>
+  <ul>
+  <?php 
+  // Show only top level categories and categories that are
+  // being published
+  $q  = "SELECT * FROM category, category_xref ";
+  $q .= "WHERE category.category_publish='Y' AND ";
+  $q .= "category_xref.category_parent_id='0' AND ";
+  $q .= "category.category_id=category_xref.category_child_id ";
+  $q .= "ORDER BY category.order ASC";
+  $db->query($q);
+  while ($db->next_record()) {
+?> 
+  <li><a href="<?php $sess->purl(URL . "?page=shop/browse&amp;category=" 
+			     . $db->f("category_url"));?>"><?php echo $db->f("category_name"); ?></a></li> 
+<?php
+  }
+?></ul></td></tr>
+<!-- End browse categories --> 
+  <!-- Search Box --> 
+  <tr> 
+    <td height="21" class="RecordsTableHeader"><span class="RecordsTableHeader"><?php echo $search_title ?></span> </td>
+  </tr>
+  <tr> 
+    <td> 
+      <form action="<?php echo URL ?>" method="post">
+        <?php $sess->hidden_session() ?> 
+        <input type="text" size="16" name="keyword" />
+        <input type="hidden" name="page" value="shop/browse" />
+        <br />
+        <input type="submit" name="Search" value="Hledat" />
+      </form>
+    </td>
+  </tr>
+  <!-- End Search Box --> 
+</table>
+<br>
+<?php include('shop/html/latestprod.ihtml'); ?>
+<!-- End leftbar --> 
+</td> 
+          <td width="2" valign="top">&nbsp;</td> 
+          <td valign="top"> 
+		  <?php if (isset($error)): ?>
+		  <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center" class="ErrorTable"> 
+              <tr align="center"> 
+                <td><?php echo $error?></td> 
+              </tr> 
+            </table> 
+			<?php endif; ?>
+            <br /> 
+            <!-- BEGIN BODY --> 
+            <?php if (0): ?> 
+            <!-- END BODY --> </td> 
+          <td width="150" align="right" valign="top">
+          <!-- BEGIN RIGHT BAR -->
+ <?php include('shop/html/minicart.ihtml'); ?>
+ <br>
+ <?php include('shop/html/featuredprod.ihtml'); ?>
+ <!-- END RIGHT BAR -->
+          </td>
+        </tr> 
+    </table></td> 
+  </tr> 
+  <tr> 
+    <td height="1" valign="bottom"> 
+	<table width="100%" border="0" cellspacing="0" cellpadding="4" class="FooterTable"> 
+        <tr> 
+          <td></td> 
+        </tr> 
+        <tr> 
+          <td align="center">Powered by <a href="http://www.phpshop.org" class="wLink">phpShop</a> 0.8.0 <br /> 
+          <a class="wLink" href="http://www.edikon.com">Copyright Edikon Corp. </a></td> 
+        </tr> 
+      </table></td> 
+  </tr> 
+</table> 
+</body>
+</html>
+<?php endif; ?>

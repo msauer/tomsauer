@@ -1,0 +1,130 @@
+<!-- Body starts here -->
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="MenuTable">
+<tr><td align="center" class="RecordsTableHeader">Pokud jste již někdy byl(a) naším zíkazníkem, přihlašte se prosím.
+</td></tr>
+</table>
+<form action="<?php echo SECUREURL ?>" method="post" name="Login" id="Login">
+<?php $sess->hidden_session() ?>
+<?php hide_vars() ?>
+<input type="hidden" name="page" value="<?php echo $last_page ?>" />
+<input type="hidden" name="func" value="userLogin" />
+<table align="center" width="100%" cellspacing="0" cellpadding="6" border="0" class="MenuTable">
+<tr><td align="center" class="RecordsTableHeader" colspan="2">Přihlášení zákazníka</td></tr>
+<tr>
+<td align="right">Uživatelské jméno:</td>
+<td><input type="text" name="username" maxlength="32" size="16" />
+</td></tr>
+<tr>
+<td align="right">Heslo:</td>
+<td><input type="password" name="password" maxlength="32" size="16" />
+</td></tr>
+<tr><td colspan="2" align="center">
+
+
+<input type="submit" name="Login" value="Login" />
+<p><a href="<?php $sess->purl(URL."?page=shop/lost_password"); ?>">Zapomenuté heslo?</a></p>
+</td></tr>
+</table>
+</form>
+<p><br />
+  Pokud jste v našem obchodě poprvé, zaregistrujte se prosím.
+  Registrace vám umožní další nákupy bez zadávání dalších údajů.
+</p>
+<form action="<?php echo SECUREURL ?>" method="post" name="Register" id="Register">
+<?php $sess->hidden_session() ?>
+<?php hide_vars() ?>
+<input type="hidden" name="func" value="shopperAdd" />
+<input type="hidden" name="login" value="1" />
+<table align="center" width="100%" cellspacing="0" cellpadding="6" border="0" class="MenuTable">
+  <tr>
+    <td align="center" class="RecordsTableHeader" colspan="2">Registrace zákazníka </td>
+  </tr>
+<tr>
+<td align="right">Uživatelské jméno:</td>
+<td>
+        <input type="text" name="username" maxlength="32" size="32" value="<?php echo $username ?>" />
+      </td></tr>
+<tr>
+<td align="right">Heslo:</td>
+<td>
+        <input type="password" name="password_1" maxlength="32" size="16" value="<?php echo $password_1 ?>" />
+      </td></tr>
+<tr>
+<td align="right">Heslo(znovu):</td>
+<td>
+        <input type="password" name="password_2" maxlength="32" size="16" value="<?php echo $password_2 ?>" />
+      </td></tr>
+
+<tr>
+<td align="right">Firma:</td>
+<td>
+        <input type="text" name="company" maxlength="64" size="16" value="<?php echo $company ?>" />
+      </td></tr>
+<tr>
+<td align="right">Příjmení:</td>
+<td>
+        <input type="text" name="last_name" maxlength="32" size="16" value="<?php echo $last_name ?>" />
+      </td></tr>
+<tr>
+<td align="right">Jméno:</td>
+<td>
+        <input type="text" name="first_name" maxlength="32" size="16" value="<?php echo $first_name ?>" />
+      </td></tr>
+<tr>
+<td align="right">Druhé jméno:</td>
+<td>
+        <input type="text" name="middle_name" maxlength="32" size="16" value="<?php echo $middle_name ?>" />
+      </td></tr>
+
+<tr>
+<td align="right">Adresa:</td>
+<td>
+        <input type="text" name="address_1" maxlength="64" size="32" value="<?php echo $address_1 ?>" />
+      </td></tr>
+<tr>
+<td align="right">Adresa pokr.:</td>
+<td>
+        <input type="text" name="address_2" maxlength="64" size="32" value="<?php echo $address_2 ?>" />
+      </td></tr>
+<tr>
+<td align="right">Město:</td>
+<td>
+        <input type="text" name="city" maxlength="32" size="16" value="<?php echo $city ?>" />
+      </td></tr>
+      <input type="hidden" name="state" value="stat" />
+<td align="right">PSČ:</td>
+<td>
+        <input type="text" name="zip" maxlength="32" size="16" value="<?php echo $zip ?>" />
+      </td></tr>
+<tr>
+<td align="right">Země:</td>
+      <td><?php 
+$ps_html->list_country("country", $country);
+?> </td>
+    </tr>
+<tr>
+<td align="right">Telefon:</td>
+<td>
+        <input type="text" name="phone_1" maxlength="32" size="16" value="<?php echo $phone_1 ?>" />
+      </td></tr>
+<tr>
+<td align="right">Fax:</td>
+<td>
+        <input type="text" name="fax" maxlength="32" size="16" value="<?php echo $fax ?>" />
+      </td></tr>
+<tr>
+<td align="right">Email:</td>
+<td>
+        <input type="text" name="user_email" maxlength="32" size="32" value="<?php echo $user_email ?>" />
+      </td></tr>
+
+
+<tr><td colspan="2" align="center">
+<input type="submit" name="Register" value="Registrovat" />
+</td></tr>
+</table>
+</form>
+<!-- Body ends here -->
+
+<?php 
+?>

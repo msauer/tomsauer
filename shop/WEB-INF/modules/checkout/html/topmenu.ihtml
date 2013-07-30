@@ -1,0 +1,29 @@
+<!-- Main menu -->
+<table border="0" width="100%" cellspacing="0" cellpadding="4"> 
+<tr align="center">
+<td>
+   <a href="<?php $sess->purl(URL . "?page=shop/index");?>"
+   ><?php echo $home_title ?></a></td>
+<td><a href="<?php $sess->purl(URL . "?page=shop/browse");?>"
+   ><?php echo $browse_title ?></a></td>
+<td><a href="<?php $sess->purl(URL . "?page=shop/cart");?>"
+   ><?php echo $cart_title ?></a></td>
+<td><a href="<?php $sess->purl(SECUREURL . "?page=checkout/index");?>"
+   ><?php echo $checkout_title ?></a></td>
+<td>
+<?php
+   if ($auth["perms"]) {
+      echo "<A HREF=";
+      $sess->purl(URL . "?page=shop/index&func=userLogout");
+      echo ">$logout_title</A>";
+   }
+   else {
+	echo "<A HREF=";
+ 	$sess->purl(SECUREURL . "?page=$page&login=1");
+        echo ">$login_title</A>";
+   }
+   
+?></td>
+</tr></table>
+<!-- End Menu -->
+

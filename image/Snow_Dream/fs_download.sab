@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title><*title*></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+  <meta name="author" content="Jiří Lukáš">
+  <meta name="category" content="business">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="stylesheet" href="image/freestyle/freestyle.css" type="text/css">
+</head>
+<body background="image/freestyle/bg_gray1.jpg">
+
+
+
+<table width="783" align="center" class="zahlavi">
+<td><img src="image/freestyle/phpRS_white.gif" border="0" width="284" height="105" Alt="phpRS"/></td>
+<td><*banner1*></tr>
+
+<form action="search.php" method="post">
+<table align="center" table width="783" border="0" cellpadding="0" cellspacing="0">
+<tr><td bgcolor="#ffffff" height="2" colspan="3"></td></tr>
+<tr><td height="2" colspan="3"></td></tr>
+<tr valign="middle">
+<td bgcolor="#eaeaea" align="left" width="200" class="z1">&nbsp;Dnešní datum: <b><*datum*></b>&nbsp;&nbsp;</td>
+<td bgcolor="#eaeaea" align="center" class="z1">| <a href="index.php">Hlavní stránka</a> | <a href="index.php?akce=temata">Seznam rubrik</a> | <a href="download.php">Download</a> | <a href="index.php?akce=linky">Weblinks</a> |</td>
+<td bgcolor="#eaeaea" align="right" valign="middle" class="z"><input type="text" name="rstext" size="15" /> &nbsp; <input type="submit" title="Vyhledávání ve všech článcích časopisu Super Svět!" value=" Hledej " />&nbsp;</td>
+</tr>
+<tr><td height="2" colspan="3"></td></tr>
+<tr><td bgcolor="#afafaf" height="1" colspan="3"></td></tr>
+</table>
+</form>
+
+
+
+
+
+<table align="center" table width="783" bgcolor="#ffffff" bordercolor="#afafaf" border="0" cellpadding="0" cellspacing="0"class="lay_tabulka">
+<tr>
+<td align="center" valign="top" width="180"><*syssl:1*></td>
+<td valign="top"><*syssl:2*></td>
+</tr>
+</table>
+
+<div class="zapati">
+
+<*banner2*>
+
+<p class="z2">
+<a href="http://www.supersvet.cz/phprs/" target="_blank"><img src="image/freestyle/plogo_phprs.gif" alt="Web site powered by phpRS" border="0" hspace="10" height="31" width="88" /></a>
+<a href="http://www.php.net" target="_blank"><img src="image/freestyle/plogo_php.gif" alt="PHP Scripting Language" border="0" hspace="10" height="31" width="88" /></a>
+<a href="http://www.mysql.com" target=blank><img src="image/freestyle/plogo_mysql.gif" alt="MySQL" border="0" hspace="10" height="31" width="88" /></a>
+<a href="http://www.apache.org" target=blank><img src="image/freestyle/plogo_apache.gif" alt="Apache Web Server" border="0" hspace="10" height="31" width="88" /></a>
+</p>
+<p class="z2">
+Tento web site byl vytvořen prostřednictvím <a href="http://www.supersvet.cz/phprs/" target="_blank">phpRS</a> - redakčního systému napsaného v PHP jazyce.<br />
+Na této stránce použité názvy programových produktů, firem apod. mohou být ochrannými známkami<br />
+nebo registrovanými ochrannými známkami příslušných vlastníků.
+</p>
+
+</div>
+
+</body>
+</html>

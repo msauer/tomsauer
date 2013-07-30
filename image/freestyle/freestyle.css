@@ -1,0 +1,479 @@
+body {
+	font-family: "verdana","arial";
+	font-size: 12px;
+	color: #000000;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+table {
+	border-collapse: collapse;
+}
+.lay_tabulka {
+	width: 100%;
+}
+.lay_sl {
+	text-align: center;
+	vertical-align: top;
+}
+.lay_slhlavni {
+	vertical-align: top;
+}
+.zahlavi {
+	width: 100%;
+	position: relative;
+}
+.zapati {
+	width: 100%;
+	text-align: center;
+}
+
+/* hyperlinky */
+
+A {
+	font-size: 100%;
+	font-style: normal;
+	font-variant: normal;
+}
+A:link {
+	color: #035D8A;
+}
+A:visited {
+	color: #035D8A;
+}
+A:hover {
+	color: #3333FF;
+}
+A:active {
+	color: #035D8A;
+}
+A.clanek:link {
+	color: #000000;
+	text-decoration: none;
+}
+A.clanek:visited {
+	color: #000000;
+	text-decoration: none;
+}
+A.clanek:hover {
+	color: #3333FF;
+	text-decoration: none;
+}
+A.clanek:active {
+	color: #000000;
+	text-decoration: none;
+}
+
+/* zakladni styly */
+
+.z {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 13px;
+	font-weight: normal;
+}
+.nadpis {
+	color: #000000;
+	text-decoration: underline;
+	font-family: "verdana","arial";
+	font-weight: bold;
+	text-align: center;
+	font-size: 20px;
+}
+.podnadpis {
+	color: #000000;
+	font-family: "verdana","arial";
+	text-align: center;
+	font-size: 16px;
+}
+
+/* komentare */
+
+.komz {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 11px;
+	font-weight: normal;
+}
+.komlink {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 13px;
+	font-weight: normal;
+}
+.komhlav {
+	color: #000000;
+	padding: 4px;
+	font-family: "verdana","arial";
+	font-size: 11px;
+	font-weight: normal;
+}
+.komtext {
+	color: #000000;
+	background-color: #EEEEEE;
+	padding: 3px;
+	border: 1px solid #000000;
+	font-family: "verdana","arial";
+	font-size: 11px;
+	font-weight: normal;
+}
+
+/* ankety */
+
+.anketasysz {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 13px;
+	font-weight: normal;
+}
+.anketasysodp {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 10px;
+	font-weight: normal;
+}
+
+/* novinky */
+
+.novdatum {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 10px;
+	font-weight: bold;
+}
+.novtit {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 10px;
+	font-weight: bold;
+}
+.novtitduraz {
+	color: #FF0000;
+	font-family: "verdana","arial";
+	font-size: 10px;
+	font-weight: bold;
+}
+.novtext {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 10px;
+	font-weight: normal;
+}
+
+/* clanky */
+
+.cla-nadpis {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-weight: normal;
+	font-size: 18px;
+	margin: 0px;
+}
+.cla-text {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-weight: normal;
+	font-size: 13px;
+}
+.cla-informace {
+	color: #035D8A;
+	font-family: "verdana","arial";
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.cla-informace-tisk {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 11px;
+	font-weight: normal;
+}
+
+/* dalsi pomocne styly*/
+
+.hodnoceni {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 11px;
+	font-weight: normal;
+}
+.banner {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 10px;
+	font-weight: normal;
+}
+.bannerpod {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 9px;
+	font-weight: normal;
+}
+.strankovani {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 10px;
+	font-weight: bold;
+}
+.biltucne {
+	color: #FFFFFF;
+	font-family: "verdana","arial";
+	font-size: 13px;
+	font-weight: bold;
+}
+.chybastredni {
+	color: #FF0000;
+	font-family: "verdana","arial";
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/* rozsirujici styly pro plug-iny */
+
+.kaltext {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 12px;
+	font-weight: normal;
+}
+.kalclanek {
+	background-color: #C7F1C7;
+}
+.kaldnesni {
+	background-color: #C1E0FF;
+}
+.planakci {
+	font-family: "verdana","arial";
+	font-size: 10px;
+}
+.informace {
+	color: #000000;
+	font-family: "verdana","arial";
+	font-size: 9px;
+	font-weight: none;
+	width: 100%;
+}
+
+/* oramovani oblasti */
+
+.mezera {
+	width: 5px;
+}
+.ohr {	
+	width: auto;
+}
+.modryram {
+	border-top-width: 0px; 
+	border-left-width: 2px; 
+	border-right-width: 0px; 
+	border-bottom-width: 2px; 
+	border-style: double;
+	border-color: #003098;
+	padding: 6px;
+	background-color: #FFFFFF;
+}
+.premodryram {
+	border-top-width: 0px; 
+	border-left-width: 0px; 
+	border-right-width: 2px; 
+	border-bottom-width: 2px; 
+	border-style: double;
+	border-color: #003098;
+	padding: 6px;
+	background-color: #FFFFFF;
+}
+.horni-navig-lista {
+	border-top-width: 2px; 
+	border-left-width: 0px; 
+	border-right-width: 0px; 
+	border-bottom-width: 2px; 
+	border-style: solid;
+	border-color: #003098;
+	padding: 2px;
+	background-color: #FFFFFF;
+}
+
+/* textova pole, tlacitka */
+
+.textbox {
+	background: transparent;
+	background-color: white;
+	border: 1px solid #000000;
+	color: #000000;
+	font-family: "verdana","arial","helvetica";
+	font-size: x-small;
+	text-align: left;
+	scrollbar-face-color: #CCCCCC;
+	scrollbar-shadow-color: #FFFFFF;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-3dlight-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+	scrollbar-track-color: #FFFFFF;
+	scrollbar-arrow-color: #000000;
+}
+.textpole {
+	border: 1px solid #000000;
+	color: #000000; 
+	font-family: "verdana","arial";
+	font-size: 12px;
+}
+.tl {
+	background-color: #808080;
+	color: #FFFFFF;
+	font-family: Verdana,Arial,Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	border: 1px solid #000000;
+}
+
+
+/* Nastavuje urcenym prvkum zobrazeni v jednom radku */
+.gal_inline {
+   display: inline;
+}
+/* Nastaveni fontu navugace */
+.gal_navigace {
+        font-size: 11px;
+        font-weight: normal;
+        font-family: "verdana","arial";
+}
+/* Nastaveni popisu galerie v zobrazeni galerie  */
+.gal_ukaz_popis {
+        text-align: center;
+        width: 70%;
+        font-size: 11px;
+        margin: 3px 0px 3px 0px;
+}
+/* Nastaveni vlastnika galerie v zobrazeni galerie*/
+.gal_ukaz_vlastnik {
+        width: 70%;
+        text-align: right;
+        font-size: 11px;
+        font-weight: bold;
+}
+/* Odsazeni formulare */
+.gal_ukaz_form {
+        text-align: center;
+        font size: 11px;
+        margin-top: 5px;
+}
+/* Nadpis galerie */
+.gal_nadpis {
+        font-weight: bold;
+        font-size: 17px;
+        text-align: center;
+        margin: 5px;
+        font-family: "verdana","arial";
+}
+/* Vycet omezenei */
+.gal_omezeni {
+        font-size: 11px;
+        text-align: left;
+        margin-top: 10px;
+        text-align: center;
+}
+/**/
+.gal_vypis {
+        margin-left: 10px;
+        font-size: 10px;
+        font-weight: normal;
+        text-align: left;
+}
+/* Cervene */
+.gal_cervene {
+        color: #0000AA;
+}
+/* Tucne */
+.gal_tucne {
+        font-weight: bold;
+}
+/* Vyrazne */
+.gal_vyrazne {
+        font-weight: bold;
+        color: #0000AA;
+}
+/* Text galerie */
+.gal_text {
+        margin-top: 10px;
+        margin-bottom: 2px;
+        font-size: 11px;
+        text-align: left;
+}
+/* Odsazeni formularovych tlacitek */
+.gal_formular {
+        font-size: 11px;
+        text-align: left;
+        margin-left: 15px;
+}
+/* Vodorovna cara */
+.gal_cara {
+        border: 1px dotted #000000;
+}
+/* Inpt pole */
+.gal_input {
+    background: transparent;
+    background-color: white;
+    border: 1px solid #000000;
+    color: #000000;
+    font-family: "verdana","arial","helvetica";
+    font-size: 11px;
+    text-align: left;
+}
+/* Okraje obrazku v prehledu galerii */
+.gal_prehled img {
+   border: 1px solid #000000;
+   margin: 2px;
+}
+/* Celkove nastaveni prehledu galerii */
+.gal_prehled {
+   width: 400px;
+   border: 1px dotted #000000;
+   font-size: 11px;
+   padding: 0 3 0 3;
+}
+/* Titulek v prehledu galerii */
+.gal_prehled td.titulek {
+   text-align: center;
+   padding-bottom: 2px;
+}
+/* Popis v prehledu galerii */
+.gal_prehled td.popis {
+   font-style: italic;
+   width: 110px;
+}
+/* Obrazek v prehledu galerii */
+.gal_prehled td.obrazek {
+   width: 110px;
+}
+/* Udaje v prehledu galerii */
+.gal_prehled td.udaje {
+   text-align: left;
+}
+/* Format obrazku v zobrazeni galerie */
+.gal_ukaz_galerie_obrazek img {
+   margin: 5px;
+   border: 1px solid #000000;
+}
+/* Titulek obrazku v prehledu galerii */
+.gal_ukaz_galerie_obrazek_titulek {
+   font-size: 11px;
+   font-weight: bold;
+}
+/* Titulek v prehledu galerii */
+.gal_galerie_ukaz_titulek {
+   font-size: 10px;
+   border: 1px dotted #000000;
+   margin: auto;
+}
+/* Obrazek */
+.gal_obr img {
+   margin: 5px;
+   border: 1px solid #000000;
+}
+/* Nastaveni fontu strankovani */
+.gal_strankovani {
+  font-size: 10px;
+}

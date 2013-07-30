@@ -1,0 +1,102 @@
+Layout Snow Dream pro phpRS 2.5.0
+---------------------------------
+
+Change It!
+
+Layout se tváøí jako pùvodní Snow Dream z verze 2.3.5 Opìt klasika, tedy 
+pevný nastavení na 783 px. pøi jakémkoliv rozlišení a typické pro tento layout, 
+"naražení" blokù na sebe. Pøítomnost šablon mu ale dává nové možnosti. 
+
+Všechny šablony z pùvodní distribuce jsou èinné, "tisková" šablona je odlišena 
+barvou špuntíkù v titulcích èlánkù, u tiskové šablony cla_press.php je titulek 
+krátkého èlánku v jiné barvì, pro výrazné krátké zprávy. Hlavní šablona
+fs_download.sab dùslednì dodržuje dvousloupcovou vizáž stránky. Pokud navolíte 
+pøi použití této šablony sloupce tøi, nepustí je vám ven. Pokud chcete sloupce tøi,
+použijte druhou hlavní šablonu fs_base.sab. Tato vám tøi loupce povolí, pokud zadáte 
+dva, nechá na jedné z vertikálních pozic prázné místo.
+Úprava je dokonale reverzibilní, pokud vrátíte pùvodní soubory z originální 
+distribuce, zmìny se zruší.
+
+Soubory:
+
+Vzhledem k pokrokové koncepci verze 2.5.0 se jedná pouze o výmìnu všech šablon 
+a souborù lengine.php a freestyle.css. Pokud chcete interní stopky, tak ještì 
+souboru index.php /záleží na Vás/. 
+
+Soubory z rozbaleného service packu pøekopírovat stávající v distribuci phpRS 2.5.0,
+pochopitelnì v jejich pùvodních umístìních. Pro jistotu si pùvodní soubory zálohovat.
+Nezapomeòte též na soubor freestyle.css, kde je nìkolik nových css stylù. Pokud se 
+rozhodnete vrátit k pùvodnímu layoutu Freestyle, soubor freestyle.css mùžete nechat,
+pùvodí styly jsou zachovány, vyjma stylu biltucne a zahlavi, který je nutno vrátit zpìt 
+/zmìna barvy písma a orientace tabulky, vèetnì rámování/, alespoò doufám, že je to tak.
+
+Grafické prvky;
+z adresaøe "Grafika" nasypte do podadreáøe "freestyle" v podadresáøi "image". Jsou 
+klíèové všechny, mimo tapety "bg_gray.jpg" která je tu navíc, pro mírnì tmavší pozadí. 
+Pokud ji použijete, staèí ji pak zavolat v souborech *.sab na øádku 11, smazáním jednièky
+v názvu nyní nastavené tapety "bg_gray1.jpg" Distanèní prvek "distance.jpg" z ze SD pro 
+2.3.5 tu nenajdete, je tam nyní reklamní banner, èi text.
+
+*****************************************************************
+
+For Beginers /pro nováèky/:
+
+Soubor index.php:
+-------------------------------
+tento soubor je modifikovám pouze tím, že obsahuje interní stopky, které mìøí èas sestavení
+a naètení stránky. Pro chod layoutu není nutný /myslím tím ty stopky/ jinak jako soubor 
+pochopitelnì je pro RS nezbytný. Pokud stopky nechcete, soubor index.php z Vašeho pùvodního
+phpRS nechte, tak jak byl, prostì tento modifikovaný nepoužijete.
+
+Soubor lengine.php:
+-------------------------------
+Døíve hlavní soubor, jež do verze 2.3.5 øídil z 90% vzhled celéhp RS. Tuto funkci v plné míøe 
+nyní pøevzaly èlánkové a hlavní šablony. Lengine.php ve verzi 2.5.0 spravuje bìh zmínìných 
+šablon a øídí vzhled a funkci postranních blokù /typy 1, 2 a 3./ zde také máte šanci zmìnit 
+titulek v horním proužku Vašeho prohlížeèe. Pokud zmìníte hlavní šablonu *.sab, musíte pøepsat 
+i zde tento titulek. Odehrává se to v tomto souboru mezi øádky 24 až 39, pokud máte šablon víc, 
+tak to bude mírnì jinak.
+
+Soubor freestyle.css:
+-------------------------------
+Hlavní soubor tzv. css stylù. Nezapomeòte jej vymìnit, zde totiž hodnì mluví do toho, jak bude 
+vypadat chod a orámování tabulek a vzhled písem. Pùvodní css styly byly zde zachovány, ale ne 
+všechny, tedy pokud se budete vracet k pùvodnímu vzhledu, starý freestyle.css si zazálohujte
+ostatnì tak, jako všechny modifikované soubory!
+
+Hlavní šablona fs_base.sab:
+-------------------------------
+Max. tøi sloupce, pokud navolíte dva, zobrazí prázdné místo. Hlavní kabátek RS
+
+Hlavní šablona fs_download.sab:
+-------------------------------
+Max. dva sloupce, pokud máte navoleno víc sloupcù, nezobrazí je, ale nevymaže. Pøejdete-li 
+nahlavní šablonu fs_base.sab, tøetí sloupec i s vloženými bloky se zase objeví, pokud jste 
+jej pøedtím nevymazali, ovšem. Též hlavní kabátek RS
+
+Èlánková standardní šablona cla_std.php:
+------------------------------------------
+Bìžný vzhed PS, tak jak jej znáte, možnost øazení èlánkù do rubrik a zobrazení jejich ikon. 
+èlánky zde je možno známkovat bodovým ohodnocením od 1 do 5. Známkování se vypoèítává z
+poètu hodnocení a poètu bodù. Nejnižší 0, nejvyšší ohodnocení je 5. Opakované hodnocení je
+chytøe blokováno. Poèet sloupcù, dle hlavní šablony *.sab
+
+Èlánková "novinová" šablona cla_press.php:
+------------------------------------------
+Magazinový vzhled RS, u "krátkého" èlánku jiná barva titulku, celkové odlišení podle 
+"špuntíkù" v nadpisech èlánkù /zde svìtle hnìdé/. Èlánky možno øadit do rubrik, jejich 
+ikony se však nezobrazují. Též známkování èlánkù je vypnuto. U obou èlánkových šablon je
+pøístup ke komentování èlánkù až po jejich otevøení /zvyšuje to ratting èlánkù/ Pøidán 
+u obou šablon zavírací tag do paty každého otevøeného èlánku, vyjma "krátkého" pochopitelnì. 
+Poèet sloupcù opìt podøízen hlavní šablonì *.sab
+
+!!!
+Layout je urèen pouze pro verze phpRS 2.5.0, 2.5.0a 
+
+Upozornìní:
+
+Jedná se v podstatì o "betaverzi", prozkoušejte to a pakli tam budou nìjaký bugy, 
+vopravím to. Ale spíše by být nemìly. Také, pokud mùžete, prožeòte to rùznými 
+prohlížeèi, abycho vìdìli, jak to funguje...
+
+phpRS zdar, K.    

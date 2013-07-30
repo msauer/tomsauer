@@ -80,6 +80,8 @@ $ps_product_attribute = new ps_product_attribute;
               
               //zobrazit "koupit" pro vsechny kategorie krome kol
 //              if (!$ps_product->isBike($ps_product->get_cat_for_product($product_id))) {
+
+              // show "koupit" for all but Trek bikes
               if (!$ps_product->isTrek($product_id)) {
 
               ?>

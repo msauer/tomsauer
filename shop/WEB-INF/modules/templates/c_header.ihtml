@@ -20,7 +20,7 @@
               <tr> 
                 <td align="center">&nbsp;&nbsp;<a class="wLink" href="<?php $sess->purl(URL . "?page=shop/index");?>"
    ><?php echo $home_title ?></a></td> 
-                <td align="center" nowrap="nowrap"><a class="wLink"href="<?php $sess->purl(URL . "?page=shop/cart");?>"
+                <td align="center" nowrap="nowrap"><a class="wLink" href="<?php $sess->purl(URL . "?page=shop/cart");?>"
    ><?php echo $cart_title ?></a></td> 
                 <td align="center" nowrap="nowrap"><a class="wLink" href="<?php $sess->purl(SECUREURL . "?page=checkout/index");?>"
    ><?php echo $checkout_title ?></a></td> 

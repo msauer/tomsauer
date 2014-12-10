@@ -85,12 +85,12 @@ if ($category) {
   <tr align="left">
     <th width="9%" class="RecordsTableHeader"><?php echo $product_name_title ?></th>
     <th width="9%" class="RecordsTableHeader"><?php echo $product_price_title ?></th>
-    <th width="10%" class="RecordsTableHeader"><?php echo $product_thumb_title ?></th>
-    <th width="18%" class="RecordsTableHeader"><?php echo $product_desc_title ?></th>
+    <th width="28%" class="RecordsTableHeader"><?php echo $product_thumb_title ?></th>
+    
     <th width="9%" class="RecordsTableHeaderOdd"><?php echo $product_name_title ?></th>
     <th width="9%" class="RecordsTableHeader"><?php echo $product_price_title ?></th>
-    <th width="10%" class="RecordsTableHeader"><?php echo $product_thumb_title ?></th>
-    <th width="18%" class="RecordsTableHeader"><?php echo $product_desc_title ?></th>
+    <th width="28%" class="RecordsTableHeader"><?php echo $product_thumb_title ?></th>
+    
 </tr>
 <?php
 
@@ -125,15 +125,15 @@ if ($category) {
         echo "Cena telefonicky.";
       }
      ?></td>
-    <td width="14%" class="Record" align="center">
-	<table width="100%" border="1" bordercolor="000000" cellspacing="0" cellpadding="0">
-	<tr><td align="center" bgcolor="FFFFFF">
+    <td width="19%" class="Record" align="center" valign="middle" height="100%">
+	<table width="100%" height="100%" border="1" bordercolor="000000" cellspacing="0" cellpadding="0">
+	<tr><td align="center" valign="middle" bgcolor="FFFFFF">
 	    <a href="<?php $sess->purl(URL . "?page=$flypage&amp;product_id=" . $db->f("product_id") . "&amp;category_id=" . $db->f("category_id")); ?>">
-   <?php $ps_product->show_image($db->f("product_thumb_image"),"width=160"); ?></a>
+   <?php $ps_product->show_image($db->f("product_thumb_image"),"width=180 align=\"middle\""); ?></a>
 	</td></tr>
 	</table>   
    </td>
-    <td width="5%" class="Record"> <?php $db->p("product_s_desc"); ?></td>
+
 <?php
     $i++;
     if ($i % 2 == 0) {
@@ -144,7 +144,7 @@ if ($category) {
   } //end while
 ?>
 
-<tr align="center"><td colspan="8" class="RecordsTableHeader">-
+<tr align="center"><td colspan="6" class="RecordsTableHeader">-
 <!-- Build previous/next navigation links -->
 <?php
    // Check to see if we need to have previous button

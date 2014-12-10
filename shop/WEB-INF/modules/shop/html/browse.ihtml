@@ -20,7 +20,7 @@ if ($category) {
        $db->query($q);
        $db->next_record();
        $category_id = $db->f("category_id");
-  ?>-> <strong><?php $ps_product_category->navigation_list($category_id); ?></strong>
+  ?>-> <strong><?php $ps_product_category->navigation_list($category_id); ?></strong> <!-- vypis kategorie -->
   <br />
    <?php
      $ps_product_category->print_child_list($category_id);
@@ -83,26 +83,35 @@ if ($category) {
 ?>
 <table width="100%" border="0" cellspacing="0" cellpadding="4" class="RecordsTable">
   <tr align="left">
-    <th width="18%" class="RecordsTableHeader"><?php echo $product_name_title ?></th>
-    <th width="18%" class="RecordsTableHeader"><?php echo $product_price_title ?></th>
-    <th width="19%" class="RecordsTableHeader"><?php echo $product_thumb_title ?></th>
-    <th width="63%" class="RecordsTableHeader"><?php echo $product_desc_title ?></th>
+    <th width="9%" class="RecordsTableHeader"><?php echo $product_name_title ?></th>
+    <th width="9%" class="RecordsTableHeader"><?php echo $product_price_title ?></th>
+    <th width="10%" class="RecordsTableHeader"><?php echo $product_thumb_title ?></th>
+    <th width="18%" class="RecordsTableHeader"><?php echo $product_desc_title ?></th>
+    <th width="9%" class="RecordsTableHeaderOdd"><?php echo $product_name_title ?></th>
+    <th width="9%" class="RecordsTableHeader"><?php echo $product_price_title ?></th>
+    <th width="10%" class="RecordsTableHeader"><?php echo $product_thumb_title ?></th>
+    <th width="18%" class="RecordsTableHeader"><?php echo $product_desc_title ?></th>
 </tr>
 <?php
 
   $db->query($list);
+  $i = 0;
   while ($db->next_record()) {
+    if ($i % 2 == 0) {
+        echo "<tr valign=\"top\">";
+    }
 ?>
-  <tr valign="top">
+
+  
   <?php 
   // Set the flypage for this product based on the category.
   // If no flypage is set then use the default as set in phpshop.cfg.
   $flypage = $ps_product->get_flypage($db->f("product_id"));
   ?>
-    <td width="10%" class="Record"><a href="<?php $sess->purl(URL . "?page=$flypage&amp;product_id=" . 
+<td width="5%" <?php if ($i % 2 == 0) {echo "class=\"Record\"";} else {echo "class=\"RecordOdd\"";}?>><a href="<?php $sess->purl(URL . "?page=$flypage&amp;product_id=" .
               $db->f("product_id") . "&amp;category_id=" . $db->f("category_id")); ?>"
       ><?php $db->p("product_name"); ?></a></td>
-    <td width="10%" class="Record"><?php
+    <td width="4%" class="Record"><?php
       $price = $ps_product->get_price($db->f("product_id"));
       if($db->f("product_discount_id")>"0"){
         echo "<font color=red><strike><b>Původně:</b> ";
@@ -116,21 +125,26 @@ if ($category) {
         echo "Cena telefonicky.";
       }
      ?></td>
-    <td width="20%" class="Record" align="center"> 
+    <td width="14%" class="Record" align="center">
 	<table width="100%" border="1" bordercolor="000000" cellspacing="0" cellpadding="0">
 	<tr><td align="center" bgcolor="FFFFFF">
 	    <a href="<?php $sess->purl(URL . "?page=$flypage&amp;product_id=" . $db->f("product_id") . "&amp;category_id=" . $db->f("category_id")); ?>">
-   <?php $ps_product->show_image($db->f("product_thumb_image"),"width=80"); ?></a>
+   <?php $ps_product->show_image($db->f("product_thumb_image"),"width=160"); ?></a>
 	</td></tr>
 	</table>   
    </td>
-    <td width="60%" class="Record"> <?php $db->p("product_s_desc"); ?></td>
-  </tr>
+    <td width="5%" class="Record"> <?php $db->p("product_s_desc"); ?></td>
 <?php
-  }
+    $i++;
+    if ($i % 2 == 0) {
+        echo "</tr>";
+        $i = 0;
+    }
+    
+  } //end while
 ?>
 
-<tr align="center"><td colspan="4" class="RecordsTableHeader">-
+<tr align="center"><td colspan="8" class="RecordsTableHeader">-
 <!-- Build previous/next navigation links -->
 <?php
    // Check to see if we need to have previous button

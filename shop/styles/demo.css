@@ -46,9 +46,26 @@ TABLE.RecordsTable {
 	white-space: nowrap;
 	padding: 4px;
 }
+
+.RecordsTableHeaderOdd {
+	background-color: #4f5153;
+	font-weight: bold;
+	color: #FFFFFF;
+	Border-Bottom: #000000 1px outset;
+	white-space: nowrap;
+	padding: 4px;
+        border-left: #000000 5px outset;
+}
+
 .Record {
 	background-color: #EFEAEA;
 	Border-Bottom: #000000 1px outset;
+}
+
+.RecordOdd {
+	background-color: #EFEAEA;
+	Border-Bottom: #000000 1px outset;
+        border-left: #000000 5px outset;
 }
 
 .MenuTable {

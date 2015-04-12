@@ -61,7 +61,7 @@ define("DEBUGPAGE","msgs/debug");
 # Search Directives
 # SEARCH_ROWS = number of rows per page
 # SEARCH_PAGES = number of pages to show in nav links at bottom of list.  Should be even number. 
-define("SEARCH_ROWS","20");
+define("SEARCH_ROWS","40");
 define("SEARCH_PAGES","6");    //should be an even number
 define("SEARCH_COLOR_1","#f9f9f9");
 define("SEARCH_COLOR_2","#f0f0f0");

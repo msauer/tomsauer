@@ -38,7 +38,7 @@ while ($db->next_record()) {
     $url = "<URL>http://www.cyklosauer.cz/shop/?page=shop/flypage&amp;product_id=". $db->get("product_id") ."&amp;</URL>\n";
     fputs($fh, $url);
     fputs($fh, "<ITEM_TYPE>new</ITEM_TYPE>\n");
-    fputs($fh, "<DELIVERY_DATE>1</DELIVERY_DATE>\n");
+    fputs($fh, "<DELIVERY_DATE>0</DELIVERY_DATE>\n");
     fputs($fh, "<IMGURL>http://www.cyklosauer.cz/shop/images/shop/product/". $db->get("product_thumb_image") . "</IMGURL>\n");
     $price = $ps_product->get_price($db->get("product_id"));
     $form_price = number_format($price["product_price"],0,',','');
